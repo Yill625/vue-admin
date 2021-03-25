@@ -1,14 +1,18 @@
 <template>
   <div class="dashboard-container">
-    <div class="dashboard-text">name: {{ name }}</div>
+    <Demo />
   </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
+import Demo from '@/components/Echarts/demo'
 
 export default {
   name: 'Dashboard',
+  components: {
+    Demo
+  },
   computed: {
     ...mapGetters([
       'name'
