@@ -1,34 +1,21 @@
 <template>
   <div class="dashboard-container">
-    <Demo />
+    <component :is="currentRole" />
   </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
-import Demo from '@/components/Echarts/demo'
+import adminDashboard from './admin'
 
 export default {
   name: 'Dashboard',
-  components: {
-    Demo
+  components: { adminDashboard },
+  data() {
+    return {
+      currentRole: 'adminDashboard'
+    }
   },
-  computed: {
-    ...mapGetters([
-      'name'
-    ])
+  created() {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-.dashboard {
-  &-container {
-    margin: 30px;
-  }
-  &-text {
-    font-size: 30px;
-    line-height: 46px;
-  }
-}
-</style>
