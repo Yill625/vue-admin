@@ -47,12 +47,14 @@ export const constantRoutes = [
     path: '/',
     component: Layout,
     redirect: '/dashboard',
-    children: [{
-      path: 'dashboard',
-      name: 'Dashboard',
-      component: () => import('@/views/dashboard/index'),
-      meta: { title: 'Dashboard', icon: 'dashboard' }
-    }]
+    children: [
+      {
+        path: 'dashboard',
+        name: 'Dashboard',
+        component: () => import('@/views/dashboard/index'),
+        meta: { title: 'Dashboard', icon: 'dashboard' }
+      }
+    ]
   },
 
   // {
@@ -154,8 +156,8 @@ export const constantRoutes = [
     component: Layout,
     children: [
       {
-        path: 'https://panjiachen.github.io/vue-element-admin-site/#/',
-        meta: { title: 'External Link', icon: 'link' }
+        path: 'https://github.com/Yill625/vue-admin',
+        meta: { title: 'Ivan Github', icon: 'link' }
       }
     ]
   },
@@ -164,11 +166,12 @@ export const constantRoutes = [
   { path: '*', redirect: '/404', hidden: true }
 ]
 
-const createRouter = () => new Router({
-  // mode: 'history', // require service support
-  scrollBehavior: () => ({ y: 0 }),
-  routes: constantRoutes
-})
+const createRouter = () =>
+  new Router({
+    // mode: 'history', // require service support
+    scrollBehavior: () => ({ y: 0 }),
+    routes: constantRoutes
+  })
 
 const router = createRouter()
 
